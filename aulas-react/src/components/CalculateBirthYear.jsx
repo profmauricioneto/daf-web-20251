@@ -1,3 +1,5 @@
+import 'react';
+
 const CalculateBirthYear = (props) => {
     const currentYear = new Date().getFullYear();
     const age = props.age;
