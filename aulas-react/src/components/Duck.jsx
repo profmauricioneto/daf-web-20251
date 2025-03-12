@@ -5,11 +5,17 @@ class Duck extends Component {
         name: this.props.name,
         speak: this.props.speak,
     }
+    constructor(props) {
+        super(props);
+        this.setName = this.setName.bind(this);
+        this.setSpeak = this.setSpeak.bind(this);
+    }
 
     setName(event) {
         this.setState({name: event.target.value});
     }
     setSpeak(event) {
+
         this.setState({speak: event.target.value});
     }
     render() {
@@ -18,8 +24,8 @@ class Duck extends Component {
             <>
                 <h2>Testando a classe pato!</h2>
                 <p>Olá meu nome é {name} Duck e eu faço {speak}</p>
-                <input type="text" placeholder='duckname' value={name} onChange={e => this.setName(e)} />
-                <input type="text" placeholder='duck speack' value={speak} onChange={e => this.setSpeak(e)}/>
+                <input type="text" placeholder='duckname' value={name} onChange={this.setName} />
+                <input type="text" placeholder='duck speak' value={speak} onChange={this.setSpeak}/>
             </>
         );
     }
