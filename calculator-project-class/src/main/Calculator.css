@@ -1,0 +1,7 @@
+.calculator {
+    height: 450px;
+    width: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: black;
+}
