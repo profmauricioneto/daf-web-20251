@@ -1,17 +1,24 @@
-import NotificationSettings from "./NotificationSettings";
-import CommentSection from './CommentSection';
-import NotificationPreferencesProvider from './NotificationPreferencesContext';
+import ProductCard from './ProductCard';
+import FavoritesList from './FavoritesList';
+
+const products = [
+  { id: 1, name: 'Camiseta', price: 49.90 },
+  { id: 2, name: 'Calça Jeans', price: 129.90 },
+  { id: 3, name: 'Tênis', price: 199.90 },
+];
 
 function App() {
-    return (
-      <NotificationPreferencesProvider>
-        {/* Outros componentes da sua aplicação */}
-        <TaskItem task={{ id: 1, title: 'Implementar Login', isNew: true }} />
-        <CommentSection task={{ id: 1, title: 'Implementar Login' }} comments={[]} />
-        <NotificationSettings />
-        {/* Mais componentes que precisam acessar as preferências */}
-      </NotificationPreferencesProvider>
-    );
-  }
-  
-  export default App;
+  return (
+    <div className="app">
+      <h1>Loja Online</h1>
+      <div className="products">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+      <FavoritesList />
+    </div>
+  );
+}
+
+export default App;
