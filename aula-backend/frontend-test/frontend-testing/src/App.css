@@ -1,0 +1,22 @@
+.app-container {
+  max-width: 800px;
+  margin: 32px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.app-container h1 {
+  text-align: center;
+  color: #1976d2;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 900px) {
+  .app-container {
+    max-width: 98vw;
+    padding: 10px;
+  }
+}
